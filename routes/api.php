@@ -28,3 +28,13 @@ Route::group(['prefix' => 'client'], function () {
     Route::post('update/{id}', 'ClientController@update');
     Route::delete('delete/{id}', 'ClientController@delete');
 });
+
+
+Route::get('transactions', 'TransactionController@index');
+Route::group(['prefix' => 'transaction'], function () {
+    Route::post('add', 'TransactionController@store');
+    Route::get('edit/{id}', 'TransactionController@edit');
+    Route::post('update/{id}', 'TransactionController@update');
+    Route::delete('delete/{id}', 'TransactionController@delete');
+});
+
